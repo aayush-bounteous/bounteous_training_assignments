@@ -1,0 +1,23 @@
+******Features Implemented*******
+
+1. Add Book
+2. Add Member
+3. Issue Book
+4. Return Book
+5. View All Books
+6. View All Members
+7. Search Books by Author
+8. Search Books by Title
+9. View Sorted Books by Book ID and Title
+10. Periodically overdue monitioring every minute
+
+
+*******How each concept is used********
+1. Classes and Objects: Modelled Book, Member, and LendingRecord as classes encapsulating relevant data
+2. Enums: BookStatus enum used for managing book availability status clearly
+3. Generics: Created a generic Repository<T> class to manage collections of different entity types(Book, Member, LendingRecord)
+4. Exception Handling: Defined custom exceptions like bookNotAvailableException, memberNotFoundException, and overdureBookException
+5. Collections Framework: Used HashMap to store and access books and members by their IDs efficientlyand also Used ArrayList to maintain lending records for sequential operations because there i have stored ID in the form of LR1, LR2, LR3 and so on
+6. Comparable: Implemented Comparable<Book> to allow natural ordering by title
+7. Streams & Lambda Expressions: Applied streams for filtering and processing collections with concise syntax, e.g., filtering available books or finding overdue loans.
+8. Multithreading: Implemented a background thread overdueMonitor to periodically check lending records for overdue books without disturbing the main thread input/output.
