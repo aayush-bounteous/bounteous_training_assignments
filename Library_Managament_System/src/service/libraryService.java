@@ -1,11 +1,10 @@
 package service;
 
-import model.*;
 import exceptions.*;
-
 import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
+import model.*;
 
 public class libraryService {
     //here storing book id as key and for whole object as value
@@ -90,7 +89,7 @@ public class libraryService {
                         && r.getDueDate().isBefore(LocalDate.now()));
     }
 
-    // Getters (for use in main class or elsewhere)
+    // Getters for use in main class or elsewhere
     public List<LendingRecord> getLendingRecords() {
         return records;
     }
