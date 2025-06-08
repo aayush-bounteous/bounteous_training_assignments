@@ -12,7 +12,7 @@ public class Question1{
 }
 
 
-// oddevenprinter.java
+
  class oddevenprinter {
     private final int max;
     private int number = 1;
@@ -60,7 +60,7 @@ public class Question1{
         }
     }
 }
-// oddthread.java
+
  class oddthread extends Thread {
     private final oddevenprinter printer;
 
@@ -73,7 +73,7 @@ public class Question1{
         printer.printodd();
     }
 }
-// eventhread.java
+
  class eventhread extends Thread {
     private final oddevenprinter printer;
 
