@@ -1,0 +1,65 @@
+<div style="margin:20px">
+<h1>Angular Directives example</h1>
+
+<h2>Structural Directives : *ngIf</h2>
+<button (click)="toggleVisibility()" >Toggle visibility</button>
+<div *ngIf="isVisible">
+<p>this paragraph is conditionally visible using *ngIf.</p>
+</div>
+
+<h2>Structural Directive</h2>
+<ul>
+    <li *ngFor="let item of items; let i=index"> 
+        {{item}}
+    </li>
+</ul>
+
+<h2>Attribute Directive : ngClass</h2>
+<p [ngClass]="{'active-class': isActive, 'inactive-class': !isActive}">
+    This text is styled dynamically using [ngClass]
+</p>
+
+<button (click)="toggleClass()">
+Toggle class
+</button>
+
+<h2>Custom Directives</h2>
+<div appHighlight>
+    This is highlighted using a custom directive </div>
+
+</div>
+
+
+<!-- <div style="margin:20px">
+<h1>Angular Directives example</h1>
+
+<h2>Structural Directives : *ngIf</h2>
+<button (click)="toggleVisibilty()" >Toggle visibility</button>
+<div *ngIf="isVisible">
+<p>this paragraph is conditionally visible using *ngIf.</p>
+</div>
+
+<h2>Structural Directive</h2>
+<ul>
+    <li *ngFor="let item of item; let i=index"> 
+        {{item}}
+    </li>
+</ul>
+
+
+<h2>Attribute Directive : ngClass</h2>
+<p [ngStyle]="{'active-class': isActive, 'inactive-class': !isActive}">
+    This text is styled dynamically using [ngClass]
+</p>
+
+
+<button (click)="toggleClass()">
+Toggle class
+</button>
+
+
+<h2>Custom Directives</h2>
+<div appHighlight>
+    This is highlighted using a custom directive </div>
+
+</div> -->

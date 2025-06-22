@@ -1,0 +1,163 @@
+:host {
+  display: block;
+  margin: 1rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+.book-card {
+  width: 240px;
+  border: 2px solid #000;
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  outline: none;
+  position: relative;
+}
+
+.book-card:hover,
+.book-card:focus {
+  transform: translateY(-4px);
+  outline: 2px solid #000;
+}
+
+.book-card.out-of-stock {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+}
+
+.image-wrapper {
+  height: 200px;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  padding: 0.5rem;
+}
+
+.stock-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid #000;
+  background: #fff;
+  color: #000;
+}
+
+.book-info {
+  padding: 1rem;
+  text-align: center;
+}
+
+.book-info h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+}
+
+.price,
+.qty {
+  font-size: 0.95rem;
+  margin: 0.3rem 0;
+}
+
+button {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.6rem;
+  border: 2px solid #000;
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: #000;
+  color: #fff;
+}
+
+button:disabled {
+  border-color: #000;
+  background-color: #f2f2f2;
+  color: #888;
+  cursor: not-allowed;
+}
+
+/* Modal styles */
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  color: #000;
+  padding: 2rem;
+  width: 320px;
+  max-width: 90vw;
+  border: 2px solid #000;
+  position: relative;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #000;
+}
+
+.details {
+  font-weight: normal;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #222;
+}

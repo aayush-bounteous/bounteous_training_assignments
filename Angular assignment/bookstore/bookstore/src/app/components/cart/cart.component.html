@@ -1,0 +1,52 @@
+<section class="cart-container">
+  <h1>Your Shopping Cart</h1>
+
+  <div *ngIf="items.length === 0" class="empty-message">
+    Your cart is empty.
+  </div>
+
+  <div *ngFor="let item of items" class="cart-item">
+    <img [src]="item.book?.image" alt="{{ item.book?.name }}" />
+    <div class="item-info">
+      <h2>{{ item.book?.name }}</h2>
+      <p class="price">
+        ₹{{ item.book?.price }} × {{ item.qty }} = ₹{{ item.book?.price * item.qty }}
+      </p>
+      <div class="quantity-controls">
+        <button 
+          (click)="decrease(item.book?.id)" 
+          [disabled]="item.qty <= 1"
+          aria-label="Decrease quantity"
+        >−</button>
+        <span>{{ item.qty }}</span>
+        <button 
+          (click)="increase(item.book?.id)" 
+          [disabled]="item.qty >= 2 || item.qty >= item.book?.qty"
+          aria-label="Increase quantity"
+        >+</button>
+      </div>
+    </div>
+    <button class="remove-btn" (click)="remove(item.book?.id)" aria-label="Remove item">
+      &times;
+    </button>
+  </div>
+
+  <div *ngIf="items.length > 0" class="cart-footer">
+    <div class="total">
+      <span>Total:</span>
+      <strong>₹{{ total }}</strong>
+    </div>
+    <button 
+      class="checkout-btn" 
+      (click)="onCheckout()" 
+      [disabled]="items.length === 0"
+      aria-label="Proceed to checkout"
+    >
+      Checkout
+    </button>
+  </div>
+
+  <div *ngIf="showSuccess" class="success-msg">
+    Purchase Successful!
+  </div>
+</section>

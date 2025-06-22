@@ -1,0 +1,38 @@
+<div
+  class="book-card"
+  [class.out-of-stock]="book.qty === 0"
+  (click)="openModal()"
+  tabindex="0"
+  role="button"
+>
+  <span class="visually-hidden">View details for {{ book.name }}</span>
+  <div class="image-wrapper">
+    <img [src]="book.image" [alt]="book.name" />
+    <div *ngIf="book.qty === 0" class="stock-badge">OUT</div>
+  </div>
+  <div class="book-info">
+    <h2>{{ book.name }}</h2>
+    <p class="price">₹{{ book.price }}</p>
+    <p class="qty">Available: {{ book.qty }}</p>
+    <button 
+      (click)="addBook($event)"
+      [disabled]="book.qty === 0 || inCart >= 2"
+    >Add to Cart</button>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal-backdrop" *ngIf="showModal" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="closeModal()" aria-label="Close modal">&times;</button>
+    <img [src]="book.image" [alt]="book.name" class="modal-image" />
+    <h2>{{ book.name }}</h2>
+    <p><strong>Price:</strong> ₹{{ book.price }}</p>
+    <p><strong>Available Quantity:</strong> {{ book.qty }}</p>
+    <p class="details" *ngIf="book.details">{{ book.details }}</p>
+    <button
+      (click)="addBook($event)"
+      [disabled]="book.qty === 0 || inCart >= 2"
+    >Add to Cart</button>
+  </div>
+</div>

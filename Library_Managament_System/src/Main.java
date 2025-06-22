@@ -1,10 +1,13 @@
-import model.*;
+import java.util.List;
+import java.util.Scanner;
+
+import exceptions.bookNotAvailableException;
+import exceptions.memberNotFoundException;
+import exceptions.overdureBookException;
+import model.Book;
+import model.Member;
 import service.libraryService;
 import service.overdueMonitor;
-import exceptions.*;
-
-import java.util.Scanner;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -128,7 +131,7 @@ public class Main {
                 System.out.println("Error: " + e.getMessage());
             } catch (Exception e) {
                 System.out.println("Unexpected error: " + e.getMessage());
-                   e.printStackTrace();
+                e.printStackTrace();
             }
         }
     }

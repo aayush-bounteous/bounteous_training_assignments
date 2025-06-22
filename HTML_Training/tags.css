@@ -1,0 +1,17 @@
+.MyClass{
+    background-color: aquamarine;
+    display: flex;
+    justify-content: flex-end;
+
+}
+.buttons{
+    width: auto;
+    height: auto;
+    border: 2px solid black;
+    margin: 2px;
+    padding: 2px;
+     display: flex;
+    justify-content: flex-end;
+    gap: 2px;
+    background-color: blue;
+}

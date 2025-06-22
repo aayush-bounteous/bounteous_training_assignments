@@ -1,0 +1,10 @@
+<section class="store-page">
+  <h1>Explore Our Books</h1>
+  <div class="store-grid">
+    <app-book-card
+      *ngFor="let book of books"
+      [book]="book"
+      [inCart]="cart[book.id] || 0"
+    ></app-book-card>
+  </div>
+</section>

@@ -1,0 +1,12 @@
+<nav>
+  <div class="logo" (click)="goHome()" tabindex="0" role="button" aria-label="Go to homepage">
+    BookStore
+  </div>
+  <div class="cart" (click)="goToCart()" tabindex="0" role="button" aria-label="Go to cart">
+    <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-2 4m2-4l1.5 3m10-3l1 2m-1-2l-1 2M6 21h12" />
+    </svg>
+    <span class="badge" *ngIf="cartCount > 0">{{ cartCount }}</span>
+  </div>
+</nav>

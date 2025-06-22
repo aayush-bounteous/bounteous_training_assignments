@@ -1,0 +1,33 @@
+<!-- <p>parent-component works! aabracadabrea boom boom</p>
+<app-child-component > </app-child-component>
+<app-child-component [msgfromparent]="parentmsg" (msgfromchild)="msgfrommychild($event)"> </app-child-component>
+
+<p> {{title}}</p>
+ -->
+<!-- 
+ <h2>To-DO manager</h2>
+ <input [(ngModel)]="taskInput" placeholder="Add a task"/>
+   <button (click)="addTask()" >Add</button>
+
+ <p>
+    Total : {{total}} |
+    Completed : {{completed}} |
+    pending : {{pending}}
+ </p> -->
+ <h2>To-Do Manager</h2>
+
+<input [(ngModel)]="taskInput" placeholder="Add a task" />
+<button (click)="addTask()">Add</button>
+
+<p>
+  Total: {{ tasks.length }} |
+  Completed: {{ getCompletedCount() }} |
+  Pending: {{ getPendingCount() }}
+</p>
+
+<ul>
+  <li *ngFor="let task of tasks">
+    <input type="checkbox" [(ngModel)]="task.completed" />
+    {{ task.name }}
+  </li>
+</ul>
